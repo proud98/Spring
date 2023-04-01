@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	
+	<!-- 사원데이터: 사원명은 생성자주입 , 급여와 입사일은 setter 주입 -->
+	<bean name="sdata1" class="spring.di.ex3.SawonData">
+		<constructor-arg value="주하랑"/><!-- 생성자주입 -->
+		
+		<!-- setter 주입 -->
+		<property name="pay" value="25000"/>
+		<property name="ipsaday" value="2020-11-11"/>
+	</bean>
+	
+	<!-- 사원: 사원 데이터를 ref받기! 생성자로 주입 -->
+	<!-- sawon이라는 클래스를 bean에 등록 -->
+	<bean name="saw" class="spring.di.ex3.Sawon">
+		<!-- ref주입은 bean의 name이나 id로 찾아주면 된다 -->
+		<constructor-arg ref="sdata1"/>
+	</bean>
+</beans>

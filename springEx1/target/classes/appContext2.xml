@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	
+	<!-- bean di 주입 과정 -->
+	
+	<bean id="my" class="spring.di.ex2.MyInfo">
+		<constructor-arg value="하랑"/>
+		<constructor-arg value="26"/>
+		<constructor-arg><value>서울시 강남구 한독빌딩</value></constructor-arg>
+	</bean>
+	
+	<bean id="person" class="spring.di.ex2.Person">
+	<!-- myinfo는 생성자주입 -->
+	<constructor-arg ref="my"/>
+	<!-- 학교명은 setter주입 -->
+	<property name="schoolName" value="쌍용고등학교"/>
+	</bean>
+	
+</beans>
