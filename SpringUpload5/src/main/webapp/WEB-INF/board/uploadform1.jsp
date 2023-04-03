@@ -12,11 +12,31 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="board/form1">폼</a><br>
-	<a href="board/result2">board/result2</a>
-	<a href="shop/list">shop/list</a><br>
-	<a href="shop/form2">폼데이터 읽기_dto</a><br>
-	<a href="shop/form3">폼데이터 읽기_map</a><br>
-	<%-- <c:redirect url="board/form1"> </c:redirect>  --%>
+	<form action="upload1" method="post" enctype="multipart/form-data">
+		<table class="table table-bordered" style="width: 400px;">
+		<caption><b>스프링 파일 1개 업로드</b></caption>
+			<tr>
+			<th bgcolor="orange" width="100">제목</th> 
+				<td>
+				<input type="text" name="title" class="form-control" style="width: 150px;">
+				</td>
+			</tr>
+			
+			<tr>
+			<th bgcolor="orange" width="100">업로드</th> 
+				<td>
+				<input type="file" name="photo" class="form-control" style="width: 200px;">
+				</td>
+			</tr>
+			
+			<tr>
+				<td colspan="2" align="center">
+				<button type="submit" class="btn btn-info">업로드#1</button>
+				</td>
+			</tr>
+			
+			
+		</table>
+	</form>
 </body>
 </html>

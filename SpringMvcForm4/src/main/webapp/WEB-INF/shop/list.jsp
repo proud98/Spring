@@ -8,15 +8,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Edu+VIC+WA+NT+Beginner:wght@600&family=Gamja+Flower&family=Single+Day&family=Jua&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+<script type="text/javascript" src="../js/script.js"></script>
 
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="board/form1">폼</a><br>
-	<a href="board/result2">board/result2</a>
-	<a href="shop/list">shop/list</a><br>
-	<a href="shop/form2">폼데이터 읽기_dto</a><br>
-	<a href="shop/form3">폼데이터 읽기_map</a><br>
-	<%-- <c:redirect url="board/form1"> </c:redirect>  --%>
+	<img alt="" src="" id="myimg">
 </body>
 </html>

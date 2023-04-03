@@ -12,11 +12,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="board/form1">폼</a><br>
-	<a href="board/result2">board/result2</a>
-	<a href="shop/list">shop/list</a><br>
-	<a href="shop/form2">폼데이터 읽기_dto</a><br>
-	<a href="shop/form3">폼데이터 읽기_map</a><br>
-	<%-- <c:redirect url="board/form1"> </c:redirect>  --%>
+	<%-- <c:set var="tot" value="${dto.su*dto.dan }"></c:set> --%>
+	
+	<h2>상품정보 출력</h2>
+	<div style="color: ${dto.color};">
+		상품명: ${dto.sang }
+		수량: <fmt:formatNumber value="${dto.su }" pattern=""/>
+		단가: <fmt:formatNumber value="${dto.dan }" type="currency"/>
+		총액: <fmt:formatNumber value="${dto.su*dto.dan }" type="currency"/>
+	</div>
 </body>
 </html>

@@ -12,11 +12,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="board/form1">폼</a><br>
-	<a href="board/result2">board/result2</a>
-	<a href="shop/list">shop/list</a><br>
-	<a href="shop/form2">폼데이터 읽기_dto</a><br>
-	<a href="shop/form3">폼데이터 읽기_map</a><br>
-	<%-- <c:redirect url="board/form1"> </c:redirect>  --%>
+	<h2>제목: ${title }</h2>
+	
+	<!-- 실제 업로드 된 이미지 가져오기 -->
+	<c:if test="${fileName=='no' }">
+		<b>업로드 한 파일 없음</b>
+	</c:if>
+	
+	<c:if test="${fileName!='no' }">
+		<img alt="" src="../photo/${fileName }">
+	</c:if>
+	
+	<h2>업로드 한 이미지명: ${fileName }</h2>
+	<h2>업로드 할 실제 경로: ${path }</h2>
 </body>
 </html>

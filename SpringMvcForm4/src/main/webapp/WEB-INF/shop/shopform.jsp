@@ -12,11 +12,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="board/form1">폼</a><br>
-	<a href="board/result2">board/result2</a>
-	<a href="shop/list">shop/list</a><br>
-	<a href="shop/form2">폼데이터 읽기_dto</a><br>
-	<a href="shop/form3">폼데이터 읽기_map</a><br>
-	<%-- <c:redirect url="board/form1"> </c:redirect>  --%>
+	<h2>상품입고</h2>
+	
+	<form action="process2" method="post">
+	
+		상품명: <input type="text" name="sang" size="10"><br>
+		수량: <input type="text" name="su" size="10"><br>
+		단가: <input type="text" name="dan" size="10"><br>
+		색상: <input type="color" name="color" size="10"><br>
+		
+		<button type="submit">전송</button>
+	</form>
 </body>
 </html>

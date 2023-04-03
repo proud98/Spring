@@ -12,11 +12,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="board/form1">폼</a><br>
-	<a href="board/result2">board/result2</a>
-	<a href="shop/list">shop/list</a><br>
-	<a href="shop/form2">폼데이터 읽기_dto</a><br>
-	<a href="shop/form3">폼데이터 읽기_map</a><br>
-	<%-- <c:redirect url="board/form1"> </c:redirect>  --%>
+	<c:set var="tot" value="${java+oracle+spring }"/>
+	<c:set var="avg" value="${tot/3 }"/>
+	<h2>성적 결과</h2>
+	이름 : ${name }
+	자바 : ${java }
+	오라클 : ${oracle }
+	스프링 : ${spring }
+	총점 : ${tot }
+	평균 : ${avg }
+	
 </body>
 </html>

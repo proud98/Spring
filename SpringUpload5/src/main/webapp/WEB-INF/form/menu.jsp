@@ -12,11 +12,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="board/form1">폼</a><br>
-	<a href="board/result2">board/result2</a>
-	<a href="shop/list">shop/list</a><br>
-	<a href="shop/form2">폼데이터 읽기_dto</a><br>
-	<a href="shop/form3">폼데이터 읽기_map</a><br>
-	<%-- <c:redirect url="board/form1"> </c:redirect>  --%>
+	<div style="margin-left: 200px; margin-top: 50px;">
+		
+		<button type="button" class="btn btn-warning" onclick="location.href='shop/form1'">각각읽기</button>
+		<button type="button" class="btn btn-warning" onclick="location.href='shop/form2'">dto읽기</button>
+		<button type="button" class="btn btn-warning" onclick="location.href='shop/form3'">map읽기</button>
+		
+		<button type="button" class="btn btn-warning" onclick="location.href='board/uploadform1'">이미지 업로드</button>
+		<button type="button" class="btn btn-warning" onclick="location.href='board/uploadform2'">이미지 여러개 업로드</button>
+		
+	
+	</div>
 </body>
 </html>

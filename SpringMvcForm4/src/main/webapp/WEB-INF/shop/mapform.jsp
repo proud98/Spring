@@ -12,11 +12,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="board/form1">폼</a><br>
-	<a href="board/result2">board/result2</a>
-	<a href="shop/list">shop/list</a><br>
-	<a href="shop/form2">폼데이터 읽기_dto</a><br>
-	<a href="shop/form3">폼데이터 읽기_map</a><br>
-	<%-- <c:redirect url="board/form1"> </c:redirect>  --%>
+	<h2>시험점수 입력</h2>
+	
+	<form action="process3" method="post">
+	
+		학생명: <input type="text" name="name" size="10"><br>
+		자바: <input type="text" name="java" size="10"><br>
+		오라클: <input type="text" name="oracle" size="10"><br>
+		스프링: <input type="text" name="spring" size="10"><br>
+		
+		<button type="submit">전송</button>
+	</form>
 </body>
 </html>
