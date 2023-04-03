@@ -15,6 +15,7 @@
 	
 	<h1>msg값 전달 후 그 아래 이미지 출력</h1>
 	<b>${msg }</b><<br>
-	<img alt="" src="${pageContext.request.contextPath}/res/마션.jpeg" width="200" width="200">
+	<img alt="" src="res/마션.jpeg" width="200" width="200">
+	<!-- ${pageContext.request.contextPath} -->
 </body>
 </html>

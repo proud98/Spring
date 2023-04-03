@@ -22,7 +22,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="spring.mvc.today" />
+	<context:component-scan base-package="spring.mvc.*" />
 	
 	
 	

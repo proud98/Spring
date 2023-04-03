@@ -15,6 +15,7 @@
 	<h1>name,addr값 전달 후 _nice.jsp에 출력</h1>
 	<b> ${name }</b><br>
 	<b> ${addr }</b><br>
-	<img alt="" src="${pageContext.request.contextPath}/res/마션.jpeg" width="200">
+	<img alt="" src="res/마션.jpeg" width="200">
+	<!-- ${pageContext.request.contextPath} -->
 </body>
 </html>

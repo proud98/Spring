@@ -18,6 +18,7 @@
 		<li><a href="happy">resource 이미지 출력</a></li>
 		<li><a href="hello">msg값 전달 후 그 아래 이미지 출력</a></li>
 		<li><a href="nice/hi">name,addr값 전달 후 _nice.jsp에 출력</a></li>
+		<li><a href="data/myform">입력폼</a></li>
 	</ul>
 </body>
 </html>

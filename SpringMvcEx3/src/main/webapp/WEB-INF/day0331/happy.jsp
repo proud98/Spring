@@ -13,6 +13,7 @@
 </head>
 <body>
 	<h2>resources 폴더안의 이미지 출력하기</h2>
-	<img alt="" src="${pageContext.request.contextPath}/res/마션.jpeg" width="200" width="200">
+	<img alt="" src="res/마션.jpeg" width="200" width="200"> 
+	<!-- ${pageContext.request.contextPath} -->
 </body>
 </html>

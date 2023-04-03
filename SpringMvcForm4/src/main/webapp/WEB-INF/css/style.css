@@ -1,0 +1,9 @@
+@charset "EUC-KR";
+
+table {
+	border: 2px solid gray;
+}
+
+tr,td,th{
+	border: 1px dotted green;
+}
