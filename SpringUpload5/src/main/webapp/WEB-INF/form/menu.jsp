@@ -21,7 +21,6 @@
 		<button type="button" class="btn btn-warning" onclick="location.href='board/uploadform1'">이미지 업로드</button>
 		<button type="button" class="btn btn-warning" onclick="location.href='board/uploadform2'">이미지 여러개 업로드</button>
 		
-	
 	</div>
 </body>
 </html>

@@ -16,10 +16,6 @@ public class CarConrtoller {
 	@Autowired
 	MyCarDao dao;
 	
-	/*
-	 * @GetMapping("/") public String index() { return "index"; }
-	 */
-	
 	@GetMapping("/samsung/list") //carlist를 list라고 함수설정
 	public String list(Model model) {
 		
@@ -64,6 +60,7 @@ public class CarConrtoller {
 		return "car/updateform";
 	}
 	
+	//수정action
 	@PostMapping("/samsung/update")
 	public String update(@ModelAttribute MyCarDto dto) {
 		

@@ -19,7 +19,7 @@ public class MyCarDao {
 		//자동주입 받은 세션에서 mycarMapper의 select문 id 가져오기 
 	}
 	
-	//전체데이테
+	//전체데이터 조회
 	public List<MyCarDto> getAllDatas(){
 		
 		return session.selectList("getAllDatasOfMyCar");
@@ -31,7 +31,7 @@ public class MyCarDao {
 		session.insert("insertOfMyCar", dto); //mycarMapper의 insert문 id와 파라메타값으로 넘어온 dto
 	}
 	
-	//수정폼..........?
+	//수정 할 num
 	public MyCarDto getData(String num) {
 		
 		return session.selectOne("getOneDataOfMyCar", num);
