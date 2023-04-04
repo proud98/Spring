@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTDMapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mycar">
+	
+	<!-- 갯수 -->
+	<select id="getTotalCountOfMyCar" resultType="int">
+		select count(*) from mycar
+	</select>
+	
+	<!-- 전체 데이처 조회 -->
+	<select id="getAllDatasOfMyCar" resultType="CarDto"> 
+		select * from mycar order by num desc
+	</select>
+	
+	<!-- inset -->
+	<insert id="insertOfMyCar" parameterType="CarDto">
+		insert into mycar (carname,carprice,carcolor,carguip) values(#{carname},#{carprice},#{carcolor},#{carguip})
+	</insert>
+	
+	<!-- update를 위한 num 조회 -->
+	<select id="getOneDataOfMyCar" resultType="CarDto" parameterType="String"> <!-- num의 타입 -->
+		select * from mycar where num=#{num }
+	</select>
+	
+	<update id="updateOfMyCar" parameterType="CarDto">
+	 	update mycar set carname=#{carname},carprice=#{carprice},carcolor=#{carcolor},carguip=#{carguip} where num=#{num}
+	</update>
+	
+	<delete id="deleteOfMyCar" parameterType="String">
+		delete from mycar where num=#{num }
+	</delete>
+</mapper>
