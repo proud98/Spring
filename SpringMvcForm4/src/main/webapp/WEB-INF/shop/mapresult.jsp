@@ -21,6 +21,5 @@
 	스프링 : ${spring }
 	총점 : ${tot }
 	평균 : ${avg }
-	
 </body>
 </html>

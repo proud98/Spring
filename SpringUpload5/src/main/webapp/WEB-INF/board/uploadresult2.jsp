@@ -12,6 +12,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<h2>제목: ${title }</h2>
+	
+	<c:forEach var="im" items="${files }"> <!-- forEach로 가져오기 -->
+		<img alt="" src="../photo/${im }"
+		 style="max-width: 200px;">
+	</c:forEach>
 	
 </body>
 </html>

@@ -49,7 +49,5 @@ public class BoardController {
 		
 		return "board/result2";
 	}
-	
-	
-	
+		
 }
