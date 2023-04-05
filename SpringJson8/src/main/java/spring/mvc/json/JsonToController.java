@@ -1,0 +1,42 @@
+package spring.mvc.json;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController //json전옹 컨트롤러..일반 메서드는 사용 못함
+public class JsonToController {
+	
+	@GetMapping("/list2")
+	public List<PhotoDto> list2(){
+		
+		List<PhotoDto> list=new ArrayList<PhotoDto>();
+		
+		//생성과 동시에 list에 담기
+		list.add(new PhotoDto("최고심", "최고심.jpg"));
+		list.add(new PhotoDto("최고심2", "최고심2.jpg"));
+		list.add(new PhotoDto("최고심3", "최고심3.jpg"));
+		list.add(new PhotoDto("최보현", "보현이그림.png"));
+		list.add(new PhotoDto("네모네모", "스펀지밥.jpg"));
+		return list;
+	}
+	
+	/*
+	 * @GetMapping("/list3")
+	 * 
+	 * @ResponseBody public Map<String, String> list3(){ //Map으로 key와 valuㄷ 값 넣기
+	 * key는 무조건 String일것.. value에는 int나 string 등등 다양하게 들어갈땐 object
+	 * 
+	 * Map<String, String> map=new HashMap<String, String>();
+	 * 
+	 * map.put("최고심", "최고심.jpg"); map.put("최고심2", "최고심2.jpg"); map.put("최고심3",
+	 * "최고심3.jpg");
+	 * 
+	 * return map; }
+	 */
+}

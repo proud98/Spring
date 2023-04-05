@@ -39,7 +39,7 @@ public class CarMemberController {
 	@PostMapping("/member/write")
 	public String insert(@ModelAttribute CarMemberDto dto) {
 		
-		dao.insertMember(dto);
+		dao.insertMember(dto);	
 		
 		return "redirect:list";
 	}
