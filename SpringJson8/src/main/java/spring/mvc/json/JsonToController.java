@@ -26,17 +26,4 @@ public class JsonToController {
 		return list;
 	}
 	
-	/*
-	 * @GetMapping("/list3")
-	 * 
-	 * @ResponseBody public Map<String, String> list3(){ //Map으로 key와 valuㄷ 값 넣기
-	 * key는 무조건 String일것.. value에는 int나 string 등등 다양하게 들어갈땐 object
-	 * 
-	 * Map<String, String> map=new HashMap<String, String>();
-	 * 
-	 * map.put("최고심", "최고심.jpg"); map.put("최고심2", "최고심2.jpg"); map.put("최고심3",
-	 * "최고심3.jpg");
-	 * 
-	 * return map; }
-	 */
 }

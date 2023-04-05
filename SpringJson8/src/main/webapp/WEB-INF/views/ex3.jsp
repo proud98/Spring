@@ -32,6 +32,7 @@
 					success:function(data){
 						
 						var s="";
+						var n="";
 						
 						$.each(data,function(i,elt){
 							
@@ -42,9 +43,11 @@
 								s+="<img src='upload/"+photo+"' width='50'>";
 								s+="<b>"+name+"</b>";
 							}
+								
 						});
 						
 						$("#out3").html(s);
+						
 					}
 				});
 		 
