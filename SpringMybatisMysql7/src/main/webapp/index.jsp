@@ -12,6 +12,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:redirect url="samsung/list"></c:redirect>
+	<button type="button" class="btn btn-info" style="width: 200px;" onclick="location.href='samsung/list'">차량입고</button><br>
+	<%-- <c:redirect url="samsung/list"></c:redirect> --%>
+	<button type="button" class="btn btn-info" style="width: 200px;" onclick="location.href='member/list'">고객명단</button>
 </body>
 </html>

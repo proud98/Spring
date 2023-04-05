@@ -21,7 +21,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="spring.db.car" />
+	<context:component-scan base-package="spring.db.*" />
 	
 	
 	

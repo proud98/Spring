@@ -16,6 +16,12 @@ public class CarConrtoller {
 	@Autowired
 	MyCarDao dao;
 	
+	@GetMapping("/")
+	public String index() {
+		
+		return "index";
+	}
+	
 	@GetMapping("/samsung/list") //carlist를 list라고 함수설정
 	public String list(Model model) {
 		
