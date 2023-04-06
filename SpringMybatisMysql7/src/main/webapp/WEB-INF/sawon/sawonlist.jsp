@@ -33,14 +33,24 @@
 			<button type="submit" class="btn btn-warning">검색</button>
 			
 		</form>
-	</div>
-	
-	<c:if test="${searchCount>0 }">
-	<h3>검색된 사원수는 ${searchCount}명 입니다 </h3>
-	</c:if>
+	</div>	
 	
 	<table class="table table-bordered" style="width:700px; ">
-		<caption>사원 명단</caption>
+		<caption>사원 명단
+		
+		<c:if test="${searchCount>0 && searchCount!=totalCount  }">
+			<div style="font-size: 12pt; display: flex;">
+			 <b>'${search }'</b>의 검색결과 &nbsp;<b>${searchCount}</b>개를 찾았습니다
+			 </div>
+		</c:if>
+		
+		<c:if test="${searchCount==0}">
+			<div style="font-size: 12pt; display: flex;">
+			 <b>'${search }'</b>의 검색결과가 없습니다
+			 </div>
+		</c:if>
+		
+		</caption>
 			<tr bgcolor="#fffcc">
 				<th>No</th>
 				<th>사진</th>
@@ -50,7 +60,8 @@
 				<th>가입일</th>
 				<th>수정/삭제</th>
 			</tr>
-			
+	
+	
 			<c:forEach var="dto" items="${list }" varStatus="i">
 			<tr>
 				<td>${i.count }</td>
@@ -76,5 +87,6 @@
 			</c:forEach>
 			
 		</table>
+		
 </body>
 </html>

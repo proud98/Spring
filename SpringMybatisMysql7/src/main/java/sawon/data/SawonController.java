@@ -49,6 +49,7 @@ public class SawonController {
 		model.addObject("totalCount", totalCount);
 		model.addObject("searchCount", searchCount);
 		model.addObject("list", list); //list안에는 map값도 포함 되어 있음
+		model.addObject("search",search);
 		
 		return model;
 	}
@@ -149,6 +150,13 @@ public class SawonController {
 				
 		return "redirect:list";
 		
+	}
+	
+	@GetMapping("/sawon/delete")
+	public String delete(@ModelAttribute SawonDto dto) {
+		
+		dao.delete(dto);
+		return "redirect:list";
 	}
 	
 	

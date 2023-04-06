@@ -3,6 +3,8 @@ package sawon.data;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.web.bind.annotation.GetMapping;
+
 public interface SawonDaoInter {
 	
 	public int getTotalCount();
@@ -20,6 +22,10 @@ public interface SawonDaoInter {
 	
 	//update
 	public void updateSawon(SawonDto dto);
+	
+	//delete
+	@GetMapping("/sawon/delete")
+	public String delete(SawonDto dto);
 			
 
 }

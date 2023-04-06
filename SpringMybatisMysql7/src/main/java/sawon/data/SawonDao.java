@@ -52,6 +52,12 @@ public class SawonDao implements SawonDaoInter {
 		return session.selectOne("searchOfCount", map);
 	}
 
+	@Override
+	public String delete(SawonDto dto) {
+		// TODO Auto-generated method stub
+		return session.selectOne("deleteOfSawon", dto);
+	}
+
 
 
 

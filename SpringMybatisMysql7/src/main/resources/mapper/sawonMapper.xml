@@ -43,5 +43,8 @@
 		where num=#{num }
 	</update>
 	
+	<delete id="deleteOfSawon" parameterType="String">
+		delete from sawon where num=#{num }
+	</delete>
 	
 </mapper>	
