@@ -32,7 +32,7 @@
 					success:function(data){
 						
 						var s="";
-						var n="";
+						var n=0;
 						
 						$.each(data,function(i,elt){
 							
@@ -42,11 +42,15 @@
 							if(name2==name){
 								s+="<img src='upload/"+photo+"' width='50'>";
 								s+="<b>"+name+"</b>";
+							} else {
+								n+=1;
 							}
-								
+									
 						});
 						
-						$("#out3").html(s);
+						if(n==data.length){
+							s="다시입력하세요"
+						} $("#out3").html(s);
 						
 					}
 				});
