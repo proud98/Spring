@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTDMapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sawon">
+
+	<select id="getTotalCountOfSawon" resultType="int">
+		select count(*) from sawon
+	</select>
+	
+	<insert id="insertOfSawon" parameterType="SawonDto">
+	 	insert into sawon(name,driver,buseo,photo,ipsaday) values(#{name},#{driver},#{buseo},#{photo},now())
+	</insert>
+	
+	<select id="getAllDatasOfSawon" resultType="SawonDto" parameterType="Map">
+		select * from sawon 
+		<if test="search!=null"><!-- mybatis에서 concat은 like연산자 연결을 도와줌, ${title}은 컬럼명을 의미  -->
+			where ${title} like concat('%',#{search},'%')
+		</if>
+		order by num
+	</select>
+	
+	<select id="searchOfCount" resultType="int" parameterType="Map">
+		select count(*) from sawon 
+		<if test="search!=null"><!-- mybatis에서 concat은 like연산자 연결을 도와줌, ${title}은 컬럼명을 의미  -->
+			where ${title} like concat('%',#{search},'%')
+		</if>
+	</select>
+	
+	<select id="getNumOfSawon" resultType="SawonDto" parameterType="String" >
+		select * from sawon where num=#{num }
+	</select>
+	
+	<!-- 무조건수정 -->
+	<!-- <update id="updateOfSawon" parameterType="SawonDto">
+		update sawon set name=#{name},driver=#{driver},buseo=#{buseo},photo=#{photo} where num=#{num}
+	</update> -->
+	
+	<!--이미지 수정은 맘대로 할 수 있게 (수정 안하면 기존상태 유지)  -->
+	<update id="updateOfSawon" parameterType="SawonDto">
+		update sawon set name=#{name},driver=#{driver},buseo=#{buseo}
+		<if test="photo!=null"> 
+			,photo=#{photo}
+		</if>
+		where num=#{num }
+	</update>
+	
+	
+</mapper>	
