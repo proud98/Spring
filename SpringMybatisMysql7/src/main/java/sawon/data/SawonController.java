@@ -153,7 +153,7 @@ public class SawonController {
 	}
 	
 	@GetMapping("/sawon/delete")
-	public String delete(@ModelAttribute SawonDto dto) {
+	public String delete(@ModelAttribute SawonDto dto, HttpSession session) {
 		
 		dao.delete(dto);
 		return "redirect:list";
