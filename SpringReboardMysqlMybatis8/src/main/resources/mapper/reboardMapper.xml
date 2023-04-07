@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTDMapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="reboard">
+	
+	<select id="getTotalCountOfReboard" resultType="int">
+		select count(*) from reboard
+	</select>
+	
+	<!-- num의 max값 null인 경우는 0..MaxNum 구하기 -->
+	<select id="MaxNumOfReboard" resultType="int">
+		select ifnull(max(num),0) from reboard
+	</select>
+	
+	<!--같은 group중에서 step보다 큰 데이터는 모두 +1   -->
+	<update id="updateStepOfReboard" parameterType="HashMap">
+		update reboard set restep=restep+1 where regroup=#{regroup} and restep>#{restep}
+	</update>
+	
+	<!-- 원글과 새글 모드 해당하는 insert -->
+	<insert id="insertOfReboard" parameterType="redto">
+		insert into reboard (writer,pass,subject,content,photo,regroup,restep,relevel,writeday) values(#{writer},#{pass},#{subject},#{content},#{photo},#{regroup},#{restep},#{relevel},now())
+	</insert>
+	
+	<!--페이징처리하는 전체리스트  -->
+	<!-- StartPage,PerPage 보낼거라서  HashMap  -->
+	<select id="getAllPagingOfReboard" parameterType="HashMap" resultType="redto">
+		select * from reboard order by regroup desc,restep asc limit #{start},#{perpage}
+	</select>
+</mapper>
