@@ -26,4 +26,35 @@
 	<select id="getAllPagingOfReboard" parameterType="HashMap" resultType="redto">
 		select * from reboard order by regroup desc,restep asc limit #{start},#{perpage}
 	</select>
+	
+	<!-- 0410 이어서...~~~ -->
+	<!--조회수  -->
+	<update id="UpdateReadCountOfReboard" parameterType="int">
+		update reboard set readcount=readcount+1 where num=#{num}
+	</update>
+	<!--num에 해당하는 dto  -->
+	<select id="getDataOfReboard" parameterType="int" resultType="redto">
+		select * from reboard where num=#{num}
+	</select>
+	
+	<!--수정 삭제에 필요한 num,pass 맞으면 1 틀리면 0 반환 -->
+	<select id="checkEqualPassOfReboard" resultType="int" parameterType="HashMap">
+		select count(*) from reboard where num=#{num} and pass=#{pass}
+	</select>
+	
+	<!--삭제  -->
+	<delete id="deleteReborad" parameterType="int">
+		delete from reboard where num=#{num}
+	</delete>
+	
+	<!--수정  -->
+	<update id="updateOfReboard" parameterType="redto">
+		update reboard set writer=#{writer},subject=#{subject},content=#{content}
+		<if test="photo!='no'"> 
+		 ,photo=#{photo}
+		</if>
+		where num=#{num}
+	</update>
+	
+	
 </mapper>

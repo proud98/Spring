@@ -13,18 +13,19 @@
 </head>
 <body>
 	<div style="margin: 100px; 100px;">
-		<form action="updatepass" method="post">
+		<form action="delete" method="post">
 		<!--히든  -->
 		<input type="hidden" name="num" value="${num }">
 		<input type="hidden" name="currentPage" value="${currentPage }">
 		
 			<div class="alert alert-info" style="font-size: 1.3em; width: 350px;">
-				<b>수정 비밀번호를 입력해주세요</b>
+				<b>삭제 비밀번호를 입력해주세요</b>
 			</div>
 			
 			<div>
 			<input type="password" name="pass" class="form-control" style="width: 130px;" required="required">
-			<button type="submit" class="btn btn-default">수정</button>
+			
+			<button type="submit" class="btn btn-default">삭제</button>
 			<button type="button" class="btn btn-default" onclick="history.back()">이전</button>
 			</div>
 			

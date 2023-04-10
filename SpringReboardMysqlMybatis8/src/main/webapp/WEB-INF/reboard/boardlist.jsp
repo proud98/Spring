@@ -52,8 +52,9 @@
 							<img alt="" src="../photo/re.png">
 						</c:if>
 						
+						
 						<!-- 제목 (내용보기로 이동) -->
-						<a href="content?num=${dto.num }$currentPage=${currentPage }">${dto.subject }</a>
+						<a href="content?num=${dto.num }&currentPage=${currentPage }">${dto.subject }</a>
 						
 						<!-- 이미지 있을 경우 아이콘 표시 -->
 						<c:if test="${dto.photo!='no' }">

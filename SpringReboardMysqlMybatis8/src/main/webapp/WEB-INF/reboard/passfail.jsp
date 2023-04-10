@@ -12,6 +12,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
+	<script type="text/javascript">
+		alert("비밀번호가 맞지 않아요");
+		history.back();
+	</script>
 </body>
 </html>

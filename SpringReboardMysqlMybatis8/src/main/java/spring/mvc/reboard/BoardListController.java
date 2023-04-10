@@ -45,7 +45,7 @@ public class BoardListController {
 		int startPage; 
 		int endPage; 
 		int start; 
-		int perPage=5; 
+		int perPage=10; 
 		int perBlock=5; 
 		     
 		//총 페이지 갯수
@@ -80,52 +80,6 @@ public class BoardListController {
 		return model;
 	}
 	
-	//insert
-	@PostMapping("/board/insert")
-	public String insert(@ModelAttribute ReBoardDto dto, @RequestParam ArrayList<MultipartFile> upload, HttpSession session){
-		
-		//업로드 할 실제경로
-		String path=session.getServletContext().getRealPath("/WEB-INF/photo/");
-		
-		//파일명에 날짜 붙여주기
-		SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMddHHss");
-		System.out.println(path);
-		
-		String photo="";
-		
-		//사진 선택 안하면 'no' 로 들어가게하고 했을 경우는 ','로 나오게
-		//get(0)은 첫번째 사진이란 뜻
-		if(upload.get(0).getOriginalFilename().equals("")) {
-			photo="no";
-		}else {
-			for(MultipartFile f:upload) {
-				String fName="p_"+sdf.format(new Date())+f.getOriginalFilename();
-				photo+=fName+",";
-				
-				//업로드
-				try {
-					f.transferTo(new File(path+"\\"+fName));
-				} catch (IllegalStateException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-			
-			//photo에서 마지막 컴마제거
-			photo=photo.substring(0, photo.length()-1);
-		}
-		
-		//dto에 photo 넣어주기
-		dto.setPhoto(photo);
-		
-		//insert
-		dao.insertReboardDto(dto);
-		
-		return "redirect:list";
-	}
 	
 
 }

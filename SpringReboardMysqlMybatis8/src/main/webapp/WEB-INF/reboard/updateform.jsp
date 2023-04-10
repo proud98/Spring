@@ -13,38 +13,27 @@
 </head>
 <body>
 	<div style="margin: 30px 30px;">
-		<form action="insert" method="post" enctype="multipart/form-data">
+		<form action="update" method="post" enctype="multipart/form-data">
 		<!-- hidden -->
-		<input type="hidden" name="num" value="${num }">
+		<input type="hidden" name="num" value="${dto.num }">
 		<input type="hidden" name="currentPage" value="${currentPage }">
-		<input type="hidden" name="regroup" value="${regroup }">
-		<input type="hidden" name="restep" value="${restep }">
-		<input type="hidden" name="relevel" value="${relevel }">
 		
 		<table class="table table-bordered" style="width: 500px;">
 		<caption><b>
-			<c:if test="${num==0 }">새글쓰기</c:if>
-			<c:if test="${num!=0 }">답글쓰기</c:if>
+			<c:if test="${num!=0 }">수정</c:if>
 		</b></caption>
 		
 		<tr>
-		<th width="100" bgcolor="#ffccc">작성자</th>
+		<th width="100" bgcolor="#ffccc">작성자 수정</th>
 			<td>
-			<input type="text" name="writer" class="form-control" required="required" style="width: 400px;">
+			<input type="text" name="writer" value="${dto.writer }" class="form-control" required="required" style="width: 400px;">
 			</td>
 		</tr>
 		
 		<tr>
-		<th width="100" bgcolor="#ffccc">비밀번호</th>
+		<th width="100" bgcolor="#ffccc">제목 수정</th>
 			<td>
-			<input type="password" name="pass" class="form-control" required="required" style="width: 400px;">
-			</td>
-		</tr>
-		
-		<tr>
-		<th width="100" bgcolor="#ffccc">제목</th>
-			<td>
-			<input type="text" name="subject" class="form-control" required="required" style="width: 400px;">
+			<input type="text" name="subject" value="${dto.subject }"  class="form-control" required="required" style="width: 400px;">
 			</td>
 		</tr>
 		
@@ -57,13 +46,13 @@
 		
 		<tr>
 			<td colspan="2" align="center">
-			<textarea name="content" class="form-control" required="required" style="width: 500px; height: 200px;"></textarea>
+			<textarea name="content" class="form-control" required="required" style="width: 500px; height: 200px;">${dto.content }</textarea>
 			</td>
 		</tr>
 		
 		<tr>
 			<td colspan="2" align="center">
-			<button type="submit" class="btn btn-default">저장</button>
+			<button type="submit" class="btn btn-default">수정</button>
 			<button type="button" class="btn btn-default" onclick="location.href='list'">목록</button>
 			</td>
 		</tr>

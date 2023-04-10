@@ -81,6 +81,52 @@ public class ReBoardDao implements ReBoardDaoInter {
 		return session.selectList("getAllPagingOfReboard", map);
 	}
 	
+	//조회수
+	@Override
+	public void updateReadCount(int num) {
+		// TODO Auto-generated method stub
+		
+		session.update("UpdateReadCountOfReboard", num);
+		
+	}
+	
+	//num에 해당하는 dto
+	@Override
+	public ReBoardDto getData(int num) {
+		// TODO Auto-generated method stub
+		return session.selectOne("getDataOfReboard", num);
+	}
+
+	@Override
+	public int getCheckPass(int num, int pass) {
+		// TODO Auto-generated method stub
+		
+		HashMap<String, Integer> map=new HashMap<String, Integer>();
+		map.put("num", num);
+		map.put("pass", pass);
+		
+		return session.selectOne("checkEqualPassOfReboard", map);
+	}
+
+	@Override
+	public void deleteReboard(int num) {
+		// TODO Auto-generated method stub
+		session.delete("deleteReborad", num);
+	}
+
+	@Override
+	public void updateReboard(ReBoardDto dto) {
+		// TODO Auto-generated method stub
+		
+		session.update("updateOfReboard", dto);
+		
+	}
+
+
+
+
+	
+	
 	
 
 }
