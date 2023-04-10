@@ -56,7 +56,7 @@ padding-left: 20px;
 			<!-- 댓글자리 -->
 			<tr>
 				<td>
-				<div id="answer">댓글목록출력예정</div>
+				<div id="answer">댓글목록출력예정 ${totalAnswerCount }개</div>
 				
 				<form action="ainsert" method="post" class="form-inline">
 				<input type="hidden" name="num" value="${dto.num }">

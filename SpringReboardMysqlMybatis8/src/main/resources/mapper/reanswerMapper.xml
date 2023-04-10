@@ -3,8 +3,11 @@
 <mapper namespace="reanswer">
 	
 	<select id="getTotalCountOfAnswer" resultType="int">
-		
+		select count(*) from reanswer
 	</select>
 	
+	<insert id="insertOfAnswer" parameterType="answerdto">
+		insert into reanswer (num,nickname,pass,content,writeday) values(#{num},#{nickname},#{pass},#{content},now())
+	</insert>
 	
 </mapper>
