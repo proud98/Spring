@@ -16,6 +16,15 @@ public class ReBoardDto {
 	private int readcount;
 	private Timestamp writeday;
 	
+	//´ñ±Û°³¼ö
+	private int acount;
+	
+	public int getAcount() {
+		return acount;
+	}
+	public void setAcount(int acount) {
+		this.acount = acount;
+	}
 	public int getNum() {
 		return num;
 	}

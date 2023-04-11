@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import reanswer.data.model.ReanswerDao;
 import reboard.data.model.ReBoardDao;
 import reboard.data.model.ReBoardDto;
 
@@ -26,6 +27,9 @@ public class BoardListController {
 	
 	@Autowired
 	ReBoardDao dao;
+	
+	@Autowired
+	ReanswerDao adao;
 	
 	@GetMapping("/")
 	public String start() {
@@ -65,9 +69,17 @@ public class BoardListController {
 	    
 	    int no=totalCount-(currentPage-1)*perPage;
 	    
+	    //리스트에 댓글개수 나타내기
+	    for(ReBoardDto d:list) {
+	    	
+	    	d.setAcount(adao.getAnswerList(d.getNum()).size());
+	    	
+	    }
+	    
+	    
 	    //출력에 필요한 변수를 model에 저장
 	    model.addObject("totalCount", totalCount);
-	    model.addObject("list", list);
+	    model.addObject("list", list); //댓글을 포함 한 후 전달
 	    model.addObject("totalPage", totalPage);
 	    model.addObject("startPage", startPage);
 	    model.addObject("endPage", endPage);

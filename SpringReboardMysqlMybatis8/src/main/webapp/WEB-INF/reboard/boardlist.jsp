@@ -56,6 +56,10 @@
 						<!-- 제목 (내용보기로 이동) -->
 						<a href="content?num=${dto.num }&currentPage=${currentPage }">${dto.subject }</a>
 						
+						<c:if test="${dto.acount>0 }">
+							<a href="content?num=${dto.num }&currentPage=${currentPage }#answer" style="color: red;">[${dto.acount}]</a>
+						</c:if>
+						
 						<!-- 이미지 있을 경우 아이콘 표시 -->
 						<c:if test="${dto.photo!='no' }">
 							<img alt="" src="../photo/photoimg.png" style="width: 15px;">

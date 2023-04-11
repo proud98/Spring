@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class AnswerController {
 	
 	@Autowired
-	ReanswerDao dao;
+	ReanswerDao adao;
 	
 	/*
 	@GetMapping("/board/answer")
@@ -30,24 +30,24 @@ public class AnswerController {
 		
 		return model;
 	}
-	*/
+	
 	@GetMapping("/board/answer")
 	public String answerlist(Model model,@RequestParam int num, @RequestParam int currentPage) {
 		
-		int totalAnswerCount=dao.getTotalAnswerCount();
+		int totalAnswerCount=adao.getTotalAnswerCount();
 		
 		model.addAttribute("totalAnswerCount", totalAnswerCount);
 		
 		return "redirect:content?num="+num+"&currentPage="+currentPage;
 		
 		
-	}
+	} */
 	
 	@PostMapping("/board/ainsert")
 	public String insert(@ModelAttribute ReanswerDto dto, @RequestParam int num,@RequestParam int currentPage) {
 		
-		dao.insertReanswer(dto);
+		adao.insertReanswer(dto);
 		
-		return "redirect:content?num="+num+"&currentPage="+currentPage;
+		return "redirect:content?num="+dto.getNum()+"&currentPage="+currentPage;
 	}
 }

@@ -12,7 +12,7 @@
 <title>Insert title here</title>
 
 <style type="text/css">
-#anser{
+#answer{
 border-bottom: 1px solid #add;
 margin-bottom: 20px;
 padding-top: 10px;
@@ -55,8 +55,21 @@ padding-left: 20px;
 			
 			<!-- 댓글자리 -->
 			<tr>
+			
 				<td>
-				<div id="answer">댓글목록출력예정 ${totalAnswerCount }개</div>
+				<div id="answer">
+					<b>댓글 ${acount }</b><br>
+					<c:forEach var="a" items="${alist }">
+						${a.nickname }: ${a.content }
+						&nbsp;&nbsp;
+						<span style="color: gray; font-size: 0.8em;">
+						<fmt:formatDate value="${a.writeday }" pattern="yyyy.MM.dd HH:mm"/>
+						</span>
+						&nbsp;&nbsp;
+						<span class="glyphicon glyphicon-erase" style="cursor: pointer; width: 6px;"></span>&nbsp;&nbsp;
+						<span class="delete glyphicon glyphicon-trash" style="cursor: pointer; width: 6px;" idx="${a.idx }"></span><br>
+					</c:forEach>
+				</div>
 				
 				<form action="ainsert" method="post" class="form-inline">
 				<input type="hidden" name="num" value="${dto.num }">
@@ -88,5 +101,42 @@ padding-left: 20px;
 		</table>
 	
 	</div>
+	
+	<script type="text/javascript">
+	
+	$(document).on("click", "span.delete", function(){
+		
+		var idx=$(this).attr("idx");
+		
+		//비번 입력 할 prompt창
+		var pass=prompt("비밀번호를 입력해주세요");
+
+		//비번 확인 안하고 취소 누르면
+		if(pass==null){
+			return; //종료
+		}
+		
+		
+		$.ajax({
+			
+			type:"get",
+			dataType:"json",
+			url:"deleteanswer",
+			data:{"idx":idx,"pass":pass},
+			success:function(res){
+				//AnswerRestController에서 지정한 check값 받아오기
+				if(res.check==0){
+					alert("비밀번호가 맞지 않아요");
+				}else{
+					//메세지 띄운 후 새로고침
+					alert("삭제 완료");
+					location.reload();
+				}
+			}
+		})
+
+	})
+	
+	</script>
 </body>
 </html>

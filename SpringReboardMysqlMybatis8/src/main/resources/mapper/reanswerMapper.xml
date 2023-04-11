@@ -2,12 +2,22 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTDMapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="reanswer">
 	
-	<select id="getTotalCountOfAnswer" resultType="int">
-		select count(*) from reanswer
+	<select id="getNumDatasOfReanswer" parameterType="int" resultType="answerdto">
+		select * from reanswer where num=#{num} order by idx asc
 	</select>
 	
 	<insert id="insertOfAnswer" parameterType="answerdto">
 		insert into reanswer (num,nickname,pass,content,writeday) values(#{num},#{nickname},#{pass},#{content},now())
 	</insert>
+	
+	<!--수정 삭제에 필요한 num,pass 맞으면 1 틀리면 0 반환 -->
+	<select id="checkDeleteAnswerPass" resultType="int" parameterType="HashMap">
+		select count(*) from reanswer where idx=#{idx} and pass=#{pass}
+	</select>
+	
+	<!--삭제  -->
+	<delete id="deleteAnswer" parameterType="int">
+		delete from reanswer where idx=#{idx}
+	</delete>
 	
 </mapper>
