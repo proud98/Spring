@@ -121,6 +121,13 @@ public class ReBoardDao implements ReBoardDaoInter {
 		session.update("updateOfReboard", dto);
 		
 	}
+	
+	//그냥 리스트 출력
+	@Override
+	public List<ReBoardDto> selectTestBoard() {
+		// TODO Auto-generated method stub
+		return session.selectList("listReboardTest");
+	}
 
 
 

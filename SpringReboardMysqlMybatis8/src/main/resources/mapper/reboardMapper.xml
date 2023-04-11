@@ -27,6 +27,11 @@
 		select * from reboard order by regroup desc,restep asc limit #{start},#{perpage}
 	</select>
 	
+	<!--페이징 처리 아니고 그냥 리스트  -->
+	<select id="listReboardTest" resultType="redto">
+		select * from reboard order by num asc
+	</select>
+	
 	<!-- 0410 이어서...~~~ -->
 	<!--조회수  -->
 	<update id="UpdateReadCountOfReboard" parameterType="int">

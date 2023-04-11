@@ -16,6 +16,9 @@ public interface ReBoardDaoInter {
 	public int getCheckPass(int num,int pass);
 	public void deleteReboard(int num);
 	public void updateReboard(ReBoardDto dto);
-
+	
+	//과제 
+	//그냥 리스트 출력
+	public List<ReBoardDto> selectTestBoard();
 }
 

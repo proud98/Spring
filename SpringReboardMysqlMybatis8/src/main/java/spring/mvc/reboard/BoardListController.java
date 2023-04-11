@@ -36,6 +36,13 @@ public class BoardListController {
 		return "redirect:board/list";
 	}
 	
+	//ajax 출ㄹ력 위해서 단순 포워드
+	@GetMapping("/rest/list")
+	public String strat2() {
+		return "list";
+	}
+	
+	
 	//페이징처리, 답글 리스트
 	@GetMapping("/board/list")
 	public ModelAndView list(@RequestParam(value = "currentPage",defaultValue = "1") int currentPage) {
@@ -91,7 +98,6 @@ public class BoardListController {
 		
 		return model;
 	}
-	
 	
 
 }
