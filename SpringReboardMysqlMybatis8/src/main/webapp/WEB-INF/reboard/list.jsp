@@ -65,6 +65,7 @@
 		//2번째 아이콘
 		$("span.list2").click(function(){
 			
+			
 			//$(".restlist").html("출력1"); 클릭되는지 확인
 			$("span.list1").css("color","black");
 			$("span.list2").css("color","red");

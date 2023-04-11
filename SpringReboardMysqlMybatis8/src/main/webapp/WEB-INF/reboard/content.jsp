@@ -55,7 +55,6 @@ padding-left: 20px;
 			
 			<!-- 댓글자리 -->
 			<tr>
-			
 				<td>
 				<div id="answer">
 					<b>댓글 ${acount }</b><br>

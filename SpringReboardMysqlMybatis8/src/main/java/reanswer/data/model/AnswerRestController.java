@@ -13,15 +13,6 @@ public class AnswerRestController {
 	@Autowired
 	ReanswerDao adao;
 	
-	/* @GetMapping("/board/deleteanswer") //deleteanswer는 ajax의 매핑주소
-	public void delete(@RequestParam int idx) {
-		
-		//int check=adao.getCheckPassAnswer(idx, pass);
-		//System.out.println(idx);
-		adao.deleteAnswer(idx);
-		
-	} */
-	
 	@GetMapping("/board/deleteanswer")
 	public HashMap<String, Integer> answrDelete(@RequestParam int idx, @RequestParam String pass){
 		
